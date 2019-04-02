@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile-dev
+    command: tail -f /dev/null
+    container_name: idwall_desafio_app_dev_api

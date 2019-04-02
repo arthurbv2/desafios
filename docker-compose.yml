@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  api:
+    container_name: idwall_desafio_app_api
+    build:
+      context: ./
+      dockerfile: Dockerfile-up
+    command: python main.py
+    working_dir: /app
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./:/app
+    env_file:
+      - ./.env
