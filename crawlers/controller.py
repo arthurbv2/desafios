@@ -14,7 +14,6 @@ def get_trending_threads_on_subreddits(subreddits: list):
     subreddits_trends = dict()
     nonexistent_subreddits = list()
     for subreddit in subreddits:
-        print(subreddit)
         try:
             subreddits_trends[subreddit] = get_trending_threads_on_subreddit(subreddit.strip())
         except InexistentSubRedditError:

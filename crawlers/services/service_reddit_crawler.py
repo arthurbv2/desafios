@@ -34,10 +34,10 @@ def _get_thread_info(thread_html: str):
     """
     thread_info = dict()
     thread_info['upvotes'] = int(thread_html['data-score'])
-    thread_info['comments_link'] = thread_html['data-permalink']
+    thread_info['comments_link'] = f"{_REDDIT}{thread_html['data-permalink']}"
     thread_info['title'] = thread_html.find('p', class_='title').find('a').text
     thread_info['link'] = _get_thread_short_link(
-        thread_comments_link=f"{_REDDIT}{thread_info['comments_link']}")
+        thread_comments_link=f"{_REDDIT}{thread_html['data-permalink']}")
 
     return thread_info
 
